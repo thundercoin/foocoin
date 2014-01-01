@@ -833,8 +833,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // ThunderCoin: 1 days
-static const int64 nTargetSpacing = 120; // ThunderCoin: 2 minute blocks
+static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // thundercoin: 1 days
+static const int64 nTargetSpacing = 120; // thundercoin: 2 minute blocks
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
@@ -2002,7 +2002,7 @@ bool LoadBlockIndex(bool fAllowNew)
     
         
         // Genesis block
-        const char* pszTimestamp = "Traditionally one puts something timely here coinciding with the epoch";
+        const char* pszTimestamp = "Thunder has come to stay";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2014,13 +2014,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1300000000; //epochtime
+        block.nTime    = 1390280400; //epochtime
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 0;
 
         if (fTestNet)
         {
-            block.nTime    = 1300000000;
+            block.nTime    = 1390280400;
             block.nNonce   = 0;
         }
 
